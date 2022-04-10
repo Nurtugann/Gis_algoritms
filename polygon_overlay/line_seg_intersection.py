@@ -48,7 +48,7 @@ def find_new_event(s1, s2, p, q):
     ip = intersectx(s1, s2)
     if ip is None:
         return False
-    if q.find(ip) is not -1:
+    if q.find(ip) != -1:
         return False
     if ip.x>p.x or (ip.x==p.x and ip.y >= p.y):
         e0 = Event()
