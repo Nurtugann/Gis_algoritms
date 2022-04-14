@@ -1,5 +1,6 @@
+import sys
+sys.path.append(r'C:\Users\User\Desktop\4 semester\GIS\basics')
 from point import *
-
 class Event:
     """
     Событие в очереди алгоритма заметающей прямой.

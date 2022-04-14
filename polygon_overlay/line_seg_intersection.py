@@ -1,3 +1,5 @@
+import sys
+sys.path.append(r'C:\Users\User\Desktop\4 semester\GIS\basics')
 from bintrees import AVLTree
 from point import *
 from get_Intersection_Point import *
