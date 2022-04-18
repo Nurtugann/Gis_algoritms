@@ -68,7 +68,7 @@ def intersectx(s1, s2):
         return None
     p = getIntersectionPoint(s1, s2) # точка пересечения
     return p
-0
+
 def intersections(psegs):
     """
     Реализация алгоритма Бентли–Оттмана.
