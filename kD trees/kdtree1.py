@@ -26,6 +26,7 @@ def kdcompare(r, p, depth):
         return -1
     else:
         return 1
+        
 def kdtree(points):
     """
     Создает kd-дерево, содержащее точки в заданном порядке
@@ -39,6 +40,7 @@ def kdtree(points):
         else:
             p0.right = node
     return root
+
 def query_kdtree(t, p, depth=0, is_find_only=True):
     if t is None:
         return
