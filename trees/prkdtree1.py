@@ -1,6 +1,8 @@
 from bisect import *
 import sys
-sys.path.append('../geom')
+# sys.path.append('../geom')
+sys.path.append(r'C:\Users\User\Desktop\4 semester\GIS\basics')
+
 from point import *
 
 from bisect import *
