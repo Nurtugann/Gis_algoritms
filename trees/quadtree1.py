@@ -21,7 +21,7 @@ def homogeneity(d):
 
 def quadtree(data):
     dim = data.shape[0]
-    dim2 = dim/2
+    dim2 = int(dim/2)
     if homogeneity(data) is True:
         return Quad(value=data[0,0], dim=dim, nw=None, ne=None, se=None, sw=None)
     return Quad(value=None,
@@ -93,7 +93,8 @@ def test():
     q = quadtree(data1)
     for y in range(q.dim):
         for x in range(q.dim):
-            print (query_quadtree(q, x, y), print)
+            print (query_quadtree(q, x, y), end='')
+        print()
     return q
 
 if __name__ == '__main__':

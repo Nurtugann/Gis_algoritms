@@ -46,7 +46,7 @@ def prkdtree(points, xylim, center=None, depth=0):
     pmid = (xylim[axis][1]+xylim[axis][0])/2.0
     points.sort(key=lambda points:points[axis])
     P = [p[axis] for p in points]
-    pivot = bisect(P, pmid) # includes all <=
+    pivot = bisect(P, pmid) # includes all [<= | pmid | <]
     xmin,xmax=xylim[0][0], xylim[0][1]
     ymin,ymax=xylim[1][0], xylim[1][1]
     rangel = [ [xmin, xmax], [ymin, ymax] ]
