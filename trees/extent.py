@@ -1,6 +1,6 @@
 from math import sqrt
 import sys
-sys.path.append('../geom')
+sys.path.append('basics')
 from point import *
 
 class Extent():

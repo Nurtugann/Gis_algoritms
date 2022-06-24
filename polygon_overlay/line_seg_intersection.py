@@ -1,5 +1,5 @@
 import sys
-sys.path.append(r'C:\Users\User\Desktop\4 semester\GIS\basics')
+sys.path.append('basics')
 from bintrees import AVLTree
 from point import *
 from intersection import *
@@ -102,8 +102,8 @@ def intersections(psegs):
             if s is not None:
                 sl, sr = get_lr(T, s)
                 find_new_event(sl, sr, p, eq)
-            else:
-                sp, spp = get_lrmost(T, L+C)
+        else:
+            sp, spp = get_lrmost(T, L+C)
             try:
                 sl = T.prev_key(sp)
             except KeyError: # только для первого ключа

@@ -1,5 +1,5 @@
 import sys
-sys.path.append(r'C:\Users\User\Desktop\4 semester\GIS\basics')
+sys.path.append('basics')
 from point import *
 
 class PQuadTreeNode():

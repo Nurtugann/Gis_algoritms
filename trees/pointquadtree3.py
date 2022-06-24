@@ -2,7 +2,7 @@ INF = float('inf')
 pqmaxdist = INF
 
 import sys
-sys.path.append(r'C:\Users\User\Desktop\4 semester\GIS\basics')
+sys.path.append('basics')
 from point import *
 from kdtree3 import *
 

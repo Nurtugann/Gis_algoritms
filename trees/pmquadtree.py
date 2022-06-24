@@ -1,6 +1,6 @@
 # Используется всеми PM-квадродеревьями
 import sys
-sys.path.append(r'C:\Users\User\Desktop\4 semester\GIS\basics')
+sys.path.append('basics')
 from extent import *
 from point import *
 from line_segment import Segment
