@@ -1,6 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./basic_operations",
+        "./networks",
         "./basics"
     ]
 }

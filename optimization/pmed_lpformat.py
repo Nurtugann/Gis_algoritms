@@ -1,7 +1,12 @@
+from locale import atoi
 import sys
 sys.path.append('networks')
 from network2listmatrix import network2distancematrix
-from allpairdist import *
+from allpairdist import allpairs
+
+
+
+
 if len(sys.argv) <=1:
     print (sys.argv[0], "filename [ [True|False] p]")
     sys.exit()
@@ -58,6 +63,7 @@ for i in range(n):
 print (obj)
 for i in range(n):
     print (con1[i])
+
 print (con2)
 for i in range(len(con3)):
     print (con3[i])

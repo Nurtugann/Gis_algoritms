@@ -1,5 +1,6 @@
 from network2listmatrix import *
 from dijkstra import shortest_path
+
 def gateway(s1, s2, gatewaynode, distmatrix):
     """
     Находит кратчайший путь, проходящий через калитку.
