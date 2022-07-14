@@ -63,7 +63,7 @@ def split_by_edges_pm2(edges, pmq):
         split_by_edges_pm2(subedges, pmq.quads[i])
 
 def test():
-    D = pickle.load(open('../data/mydcel.pickle'))
+    D = pickle.load(open('data-master/mydcel.pickle', 'rb'))
     XD = Xdcel(D)
 
     X = [v.x for v in D.vertices]

@@ -1,4 +1,7 @@
-from pmquadtreee import *
+from pmquadtree import *
+import pickle
+from xdcel import *
+from dcel import *
 
 def split_by_edges_pm1(edges, pmq):
     subedges = []
@@ -53,3 +56,26 @@ def split_by_edges_pm1(edges, pmq):
         pmq.vertex = None
     for i in range(4):
         split_by_edges_pm1(subedges, pmq.quads[i])
+
+def test():
+
+    D = pickle.load(open("data-master/mydcel.pickle", 'rb'))
+    XD = Xdcel(D)
+
+    X = [v.x for v in D.vertices]
+    Y = [v.y for v in D.vertices]
+    xmin,xmax,ymin,ymax = min(X)-1, max(X)+1, min(Y)-1, max(Y)+1
+    maxmax = max(xmax,ymax)
+    xmax=ymax=maxmax
+    extent = Extent(xmin, xmax, ymin, ymax)
+
+    pmq = PMQuadTreeNode(extent.getcenter(), extent)
+    split_by_points(XD.vertices, pmq)
+    split_by_edges_pm1(XD.edges, pmq)
+
+    print (search_pmquadtree(pmq, 1, 1))
+    print (search_pmquadtree(pmq, 1, 2))
+    print (search_pmquadtree(pmq, 6, 5))
+
+if __name__ == '__main__':
+    test()

@@ -1,8 +1,7 @@
-# import sys
-# # sys.path.append('../geom')
-# sys.path.append(r'C:\Users\User\Desktop\4 semester\GIS\basics')
-# from dcel import *
+import sys
+sys.path.append('basics')
 from extent import *
+from dcel import *
 
 class Edge:
     """Ребро в топологически связанном пространственном наборе данных"""
@@ -27,26 +26,26 @@ class Edge:
         return False
     def __repr__(self):
         return "{0}->{1}".format(self.fr, self.to)
-# class Xdcel(Dcel):
-#     def __init__(self, D):
-#         Dcel.hedges = D.hedges
-#         Dcel.vertices = D.vertices
-#         Dcel.faces = D.faces
-#         self.edges=[]
-#         self.build_xdcel()
-#     def build_xdcel(self):
-#     """Построить объекты Edge по информации, хранящейся в ДСР"""
-#         if not len(self.vertices) or not len(self.hedges):
-#             return
-#         for h in self.hedges:
-#             v1 = h.origin
-#             v2 = h.nexthedge.origin
-#             lf = h.face
-#             rf = h.twin.face
-#         e = Edge(v1, v2, lf, rf)
-#         try:
-#             i = self.edges.index(e)
-#         except ValueError:
-#             i = None
-#         if i is None:
-#             self.edges.append(e)
+class Xdcel(Dcel):
+    def __init__(self, D):
+        Dcel.hedges = D.hedges
+        Dcel.vertices = D.vertices
+        Dcel.faces = D.faces
+        self.edges=[]
+        self.build_xdcel()
+    def build_xdcel(self):
+        """Построить объекты Edge по информации, хранящейся в ДСР"""
+        if not len(self.vertices) or not len(self.hedges):
+            return
+        for h in self.hedges:
+            v1 = h.origin
+            v2 = h.nexthedge.origin
+            lf = h.face
+            rf = h.twin.face
+        e = Edge(v1, v2, lf, rf)
+        try:
+            i = self.edges.index(e)
+        except ValueError:
+            i = None
+        if i is None:
+            self.edges.append(e)
