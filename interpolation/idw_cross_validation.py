@@ -5,6 +5,7 @@ from idw import *
 from read_data import *
 from math import sqrt
 from prepare_interpolation_data import *
+
 Z = read_data('data-master/necoldem.dat')
 N = len(Z)
 numNeighbors = 10
@@ -22,6 +23,8 @@ for i in range(N):
         diff.append(zz-Z[i][2])
     test_results.append(diff)
     mask[i] = True
+
 for i in range(len(powers)):
-    rmse = sqrt(sum([r[i]**2 for r in test_results])/len(test_results))
-    print (rmse, '[', powers[i], ']')
+    rmse = sqrt(sum([r[i]**2 for r in test_results])/
+                len(test_results))
+    print(rmse, '[', powers[i], ']')
